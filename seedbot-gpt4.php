@@ -64,7 +64,7 @@ function seedbot_gpt4_enqueue_scripts()
     ));
     echo "<script>console.log('{$seedbot_settings[0]}' );</script>";
     
-    // echo "<script>console.log ("tesooot");</script>";
+    // echo "<script>console.log('tesooot' );</script>";
 }
 add_action('wp_enqueue_scripts', 'seedbot_gpt4_enqueue_scripts');
 
