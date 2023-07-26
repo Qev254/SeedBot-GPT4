@@ -112,4 +112,6 @@ jQuery(document).ready(function ($) {
 
     seedbot_gpt4_localize();
 
+    console.log ("test");
+
 });
