@@ -62,6 +62,9 @@ function seedbot_gpt4_enqueue_scripts()
         'ajax_url' => admin_url('admin-ajax.php'),
         'api_key' => esc_attr(get_option('seedbot_api_key')),
     ));
+    echo "<script>console.log('{$seedbot_settings}' );</script>";
+    
+    echo "<script>console.log('test' );</script>";
 }
 add_action('wp_enqueue_scripts', 'seedbot_gpt4_enqueue_scripts');
 
