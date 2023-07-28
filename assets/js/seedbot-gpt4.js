@@ -1,12 +1,12 @@
 jQuery(document).ready(function ($) {
 
-    // Logging for Diagnostics - Ver 1.4.2
-    var seedbot_gpt4_chatgpt_diagnostics = localStorage.getItem('seedbot_gpt4_chatgpt_diagnostics') || 'Off';
-    localStorage.setItem('seedbot_gpt4_chatgpt_diagnostics', seedbot_gpt4_chatgpt_diagnostics); // Set if not set
+    // We log for Diagnostics - Ver 1.4.2
+    var seedbot_gpt4_diagnostics = localStorage.getItem('seedbot_gpt4_diagnostics') || 'Off';
+    localStorage.setItem('seedbot_gpt4_diagnostics', seedbot_gpt4_diagnostics); // Set if not set
 
-    var seedbot_gpt4_messageInput = $('#seedbot-gpt4-chatgpt-message');
-    var seedbot_gpt4_conversation = $('#seedbot-gpt4-chatgpt-conversation');
-    var seedbot_gpt4_submitButton = $('#seedbot-gpt4-chatgpt-submit');
+    var seedbot_gpt4_messageInput = $('#seedbot-gpt4-message');
+    var seedbot_gpt4_conversation = $('#seedbot-gpt4-conversation');
+    var seedbot_gpt4_submitButton = $('#seedbot-gpt4-submit');
 
     // Set bot width with the default Narrow or from setting Wide - Ver 1.4.2
     var seedbot_gpt4_chatgpt_width_setting = localStorage.getItem('seedbot_gpt4_chatgpt_width_setting') || 'Narrow';
