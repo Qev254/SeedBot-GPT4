@@ -36,9 +36,9 @@ jQuery(document).ready(function ($) {
     seedbot_gpt4_ChatBot.hide();
     seedbot_gpt4_OpenButton.show();
 
-    var seedbot_gpt4_chatbotContainer = $('<div></div>').addClass('chatbot-container');
-    var seedbot_gpt4_chatbotCollapseBtn = $('<button></button>').addClass('chatbot-collapse-btn').addClass('dashicons dashicons-format-chat'); // Add a collapse button
-    var seedbot_gpt4_chatbotCollapsed = $('<div></div>').addClass('chatbot-collapsed'); // Add a collapsed chatbot icon dashicons-format-chat f125
+    var seedbot_gpt4_chatbotContainer = $('<div></div>').addClass('seedbot-gpt4-container');
+    var seedbot_gpt4_chatbotCollapseBtn = $('<button></button>').addClass('seedbot-gpt4-collapse-btn').addClass('dashicons dashicons-format-chat'); // Add a collapse button
+    var seedbot_gpt4_chatbotCollapsed = $('<div></div>').addClass('seedbot-gpt4-collapsed'); // Add a collapsed chatbot icon dashicons-format-chat f125
 
     // Support variable greetings based on setting - Ver 1.1.0
     var seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_gpt4_initial_greeting') || 'Hello! How can I help you today?';
@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
 
 
     // Add chatbot header, body, and other elements - Ver 1.1.0
-    var seedbot_gpt4_chatbotHeader = $('<div></div>').addClass('chatbot-header');
+    var seedbot_gpt4_chatbotHeader = $('<div></div>').addClass('seedbot-header');
     seedbot_gpt4_ChatBot.append(seedbot_gpt4_chatbotHeader);
 
     // Fix for Ver 1.2.0
