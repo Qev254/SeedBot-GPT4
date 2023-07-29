@@ -154,7 +154,7 @@ function seedbot_gpt4_call_api($api_key, $message)
         // Handle the response from the chat engine
         return $response_body['choices'][0]['message']['content'];
     } else {
-        // Handle any errors that are returned from the chat engine
+        // Handle any errors that are returned from the chat engine - OpenAI
         return 'Error: Unable to fetch response from SeedBot GPT4 API. Please check Settings for a valid API key or your OpenAI account for additional information.';
     }
 }
