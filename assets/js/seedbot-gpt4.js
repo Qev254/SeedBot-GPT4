@@ -4,19 +4,19 @@ jQuery(document).ready(function ($) {
     var seedbot_gpt4_diagnostics = localStorage.getItem('seedbot_gpt4_diagnostics') || 'Off';
     localStorage.setItem('seedbot_gpt4_diagnostics', seedbot_gpt4_diagnostics); // Set if not set
 
-    var seedbot_gpt4_messageInput = $('#seedbot_gpt4_message');
+    var seedbot_gpt4_messageInput = $('#seedbot-gpt4-message');
     var seedbot_gpt4_conversation = $('#seedbot-gpt4-conversation');
     var seedbot_gpt4_submitButton = $('#seedbot-gpt4-submit');
 
     // Set bot width with the default Narrow or from setting Wide - Ver 1.4.2
     var seedbot_gpt4_width_setting = localStorage.getItem('seedbot_gpt4_width_setting') || 'Narrow';
 
-    var seedbot_gpt4_ChatBot = $('#seedbot-gpt4-chatbot');
+    var seedbot_gpt4 = $('#seedbot-gpt4');
     if (seedbot_gpt4_width_setting === 'Wide') {
-        seedbot_gpt4_ChatBot.addClass('wide');
+        seedbot_gpt4.addClass('wide');
     } else {
-        seedbot_gpt4_ChatBot.removeClass('wide');
-    }
+        seedbot_gpt4.removeClass('wide');
+    }seedbot_gpt4 
 
     // Diagnostics = Ver 1.4.2
     if (seedbotSettings.seedbot_gpt4_diagnostics === 'On') {
@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
         console.log('seedbot_gpt4_messageInput: ' + seedbot_gpt4_messageInput);
         console.log('seedbot_gpt4_conversation' + seedbot_gpt4_conversation);
         console.log('seedbot_gpt4_submitButton: ' + seedbot_gpt4_submitButton);
-        console.log('seedbot_gpt4_ChatBot: ' + seedbot_gpt4_ChatBot);
+        console.log('seedbot_gpt4: ' + seedbot_gpt4);
         console.log('seedbot_gpt4_width_setting: ' + seedbot_gpt4_width_setting);
     }
 
@@ -33,12 +33,12 @@ jQuery(document).ready(function ($) {
     var seedbot_gpt4_start_status = 'closed';
     
     // Initially hide the chatbot - Ver 1.1.0
-    seedbot_gpt4_ChatBot.hide();
+    seedbot_gpt4.hide();
     seedbot_gpt4_OpenButton.show();
 
-    var seedbot_gpt4_chatbotContainer = $('<div></div>').addClass('seedbot-gpt4-container');
-    var seedbot_gpt4_chatbotCollapseBtn = $('<button></button>').addClass('seedbot-gpt4-collapse-btn').addClass('dashicons dashicons-format-chat'); // Add a collapse button
-    var seedbot_gpt4_chatbotCollapsed = $('<div></div>').addClass('seedbot-gpt4-collapsed'); // Add a collapsed chatbot icon dashicons-format-chat f125
+    var seedbot_gpt4_Container = $('<div></div>').addClass('seedbot-gpt4-container');
+    var seedbot_gpt4_CollapseBtn = $('<button></button>').addClass('seedbot-gpt4-collapse-btn').addClass('dashicons dashicons-format-chat'); // Add a collapse button
+    var seedbot_gpt4_Collapsed = $('<div></div>').addClass('seedbot-gpt4-collapsed'); // Add a collapsed chatbot icon dashicons-format-chat f125
 
     // Support variable greetings based on setting - Ver 1.1.0
     var seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_gpt4_initial_greeting') || 'Hello! How can I help you today?';
@@ -49,11 +49,11 @@ jQuery(document).ready(function ($) {
     var seedbot_gpt4_disclaimer_setting = localStorage.getItem('seedbot_gpt4_disclaimer_setting') || 'Yes';
 
     // Append the collapse button and collapsed chatbot icon to the chatbot container
-    seedbot_gpt4_chatbotContainer.append(seedbot_gpt4_chatbotCollapseBtn);
-    seedbot_gpt4_chatbotContainer.append(seedbot_gpt4_chatbotCollapsed);
+    seedbot_gpt4_Container.append(seedbot_gpt4_CollapseBtn);
+    seedbot_gpt4_Container.append(seedbot_gpt4_Collapsed);
 
     // Add initial greeting to the chatbot
-    seedbot_gpt4_conversation.append(seedbot_gpt4_chatbotContainer);
+    seedbot_gpt4_conversation.append(seedbot_gpt4_Container);
 
     function seedbot_gpt4_initializeChatbot() {
         var seedbot_gpt4_diagnostics = localStorage.getItem('seedbot_gpt4_diagnostics') || 'Off';
@@ -63,11 +63,11 @@ jQuery(document).ready(function ($) {
         localStorage.removeItem('seedbot_gpt4_conversation');
   
         if (seedbot_gpt4_isFirstTime) {
-            seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_gpt4_initial_greeting') || 'Hello! How can I help you today?';
+            seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_initial_greeting') || 'Hello! How can I help you today?';
 
             // Logging for Diagnostics - Ver 1.4.2
             if (seedbot_gpt4_diagnostics === 'On') {
-                console.log("initialGreeting" . seedbot_gpt4_initialGreeting);
+                console.log("initialGreeting" . seedbot_initialGreeting);
             }
 
             // Don't append the greeting if it's already in the conversation
