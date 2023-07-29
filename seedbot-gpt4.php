@@ -164,8 +164,8 @@ function enqueue_greetings_script()
     wp_enqueue_script('greetings', plugin_dir_url(__FILE__) . 'assets/js/greetings.js', array('jquery'), null, true);
 
     $greetings = array(
-        'initial_greeting' => esc_attr(get_option('seedbot_initial_greeting', 'Hello! How can I help you today?')),
-        'subsequent_greeting' => esc_attr(get_option('seedbot_subsequent_greeting', 'Hello again! How can I help you?')),
+        'initial_greeting' => esc_attr(get_option('seedbot_gpt4_initial_greeting', 'Hello! How can I help you today?')),
+        'subsequent_greeting' => esc_attr(get_option('seedbot_gpt4_subsequent_greeting', 'Hello again! How can I help you?')),
     );
 
     wp_localize_script('greetings', 'greetings_data', $greetings);
