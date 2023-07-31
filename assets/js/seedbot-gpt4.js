@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
 
     // Logging for Diagnostics - Ver 1.4.2
-    var seedbot_gpt4_diagnostics = localStorage.getItem('seedbot_gpt4_diagnostics') || 'Off';
+    var seedbot_gpt4_diagnostics = localStorage.getItem('seedbot_gpt4_diagnostics') || 'On';
     localStorage.setItem('seedbot_gpt4_diagnostics', seedbot_gpt4_diagnostics); // Set if not set
 
     var seedbot_gpt4_messageInput = $('#seedbot-gpt4-message');
@@ -16,9 +16,9 @@ jQuery(document).ready(function ($) {
         seedbot_gpt4.addClass('wide');
     } else {
         seedbot_gpt4.removeClass('wide');
-    }seedbot_gpt4 
+    }
 
-    // Diagnostics = Ver 1.4.2
+    // For Diagnostics Logs
     if (seedbotSettings.seedbot_gpt4_diagnostics === 'On') {
         console.log('FUNCTION: seedbot-gpt4.js');
         console.log('seedbot_gpt4_messageInput: ' + seedbot_gpt4_messageInput);
