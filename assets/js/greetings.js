@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     // Define your greetings_data object with initial and subsequent greetings
     var greetings_data = {
-        initial_greeting: 'Hello! How can I assist you today?',
+        initial_greeting: 'Hello y! How can I assist you today?',
         subsequent_greeting: 'Hello again! How can I help you?',
     };
 
