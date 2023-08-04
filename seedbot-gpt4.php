@@ -45,7 +45,7 @@ function seedbot_gpt4_enqueue_scripts()
     wp_enqueue_script('seedbot-gpt4-js', plugins_url('assets/js/seedbot-gpt4.js', __FILE__));
 
     // Enqueue the seedbot-gpt4-local.js file as seedbot-gpt4-local
-    wp_enqueue_script('seedbot-gpt4-local', plugins_url('assets/js/seedbot-gpt4-local.js', __FILE__), array('jquery'));
+    wp_enqueue_script('seedbot-gpt4-local', plugins_url('assets/js/seedbot-gpt4-local.js', __FILE__), array('jquery'), '1.0', true);
     $seedbot_settings = array(
         'seedbot_bot_name' => esc_attr(get_option('seedbot_bot_name')),
         'seedbot_initial_greeting' => esc_attr(get_option('seedbot_initial_greeting')),
@@ -192,3 +192,4 @@ function enqueue_greetings_script()
     wp_localize_script('greetings', 'greetings_data', $greetings);
 }
 add_action('wp_enqueue_scripts', 'enqueue_greetings_script');
+//update

@@ -9,3 +9,4 @@ jQuery(document).ready(function ($) {
     localStorage.setItem('seedbot_gpt4_initial_greeting', greetings_data.initial_greeting);
     localStorage.setItem('seedbot_gpt4_subsequent_greeting', greetings_data.subsequent_greeting);
 });
+//update

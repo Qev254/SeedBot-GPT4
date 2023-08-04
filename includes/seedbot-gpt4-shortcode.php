@@ -9,12 +9,20 @@
  */
 
 function seedbot_gpt4_shortcode() {
-    // Retrieve the bot name - Ver 1.1.0
+    // Retrieve the bot name - Ver 1.0.0
     // Add styling to the bot to ensure that it is not shown before it is needed Ver 1.2.0
     $bot_name = esc_attr(get_option('seedbot_gpt4_bot_name', 'SeedBot GPT-4'));
+
     ob_start();
     ?>
-    <div id="seedbot-gpt4" style="display: none;">
+
+	<script> 
+		const myArr = ["Orange", "Banana", "Mango", "Kiwi"];
+		console.log(myArr); 
+				console.log($bot_name); 
+
+</script>
+    <div id="seedbot-gpt4" style="display:flex ;">
         <div id="seedbot-gpt4-header">
             <div id="seedbotTitle" class="title"><?php echo $bot_name; ?></div>
         </div>
@@ -31,3 +39,6 @@ function seedbot_gpt4_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('seedbot_gpt4', 'seedbot_gpt4_shortcode');
+
+seedebug_to_console('see how far');
+//update
