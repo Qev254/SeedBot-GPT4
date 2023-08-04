@@ -351,7 +351,7 @@ function seedbot_gpt4_model_choice_callback($args)
 function seedbot_gpt4_bot_name_callback($args)
 {
     $bot_name = esc_attr(get_option('seedbot_bot_name', 'SeedBot GPT4'));
-    seedebug_to_console($bot_name);
+    // seedebug_to_console($bot_name);
 ?>
     <input type="text" id="seedbot_bot_name" name="seedbot_bot_name" value="<?php echo esc_attr($bot_name); ?>" class="regular-text">
     <?php
