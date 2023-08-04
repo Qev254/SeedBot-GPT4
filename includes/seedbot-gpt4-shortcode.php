@@ -16,12 +16,7 @@ function seedbot_gpt4_shortcode() {
     ob_start();
     ?>
 
-	<script> 
-		const myArr = ["Orange", "Banana", "Mango", "Kiwi"];
-		console.log(myArr); 
-				console.log($bot_name); 
 
-</script>
     <div id="seedbot-gpt4" style="display:flex ;">
         <div id="seedbot-gpt4-header">
             <div id="seedbotTitle" class="title"><?php echo $bot_name; ?></div>
