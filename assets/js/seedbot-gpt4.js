@@ -11,29 +11,29 @@ jQuery(document).ready(function ($) {
     // Set bot width with the default Narrow or from setting Wide - Ver 1.4.2
     var seedbot_gpt4_width_setting = localStorage.getItem('seedbot_gpt4_width_setting') || 'Narrow';
 
-    var seedbot_gpt4 = $('#seedbot-gpt4');
+    var seedbot_gpt4_chatbot = $('#seedbot-gpt4-chatbot'); // Updated variable name
     if (seedbot_gpt4_width_setting === 'Wide') {
-        seedbot_gpt4.addClass('wide');
+        seedbot_gpt4_chatbot.addClass('wide'); // Updated variable name
     } else {
-        seedbot_gpt4.removeClass('wide');
+        seedbot_gpt4_chatbot.removeClass('wide'); // Updated variable name
     }
 
     // For Diagnostics Logs
-    if (seedbotSettings.seedbot_gpt4_diagnostics === 'On') {
+    if (seedbotSettings.seedbot_gpt4_diagnostics === 'On') { // Consider updating this line as well
         console.log('FUNCTION: seedbot-gpt4.js');
         console.log('seedbot_gpt4_messageInput: ' + seedbot_gpt4_messageInput);
         console.log('seedbot_gpt4_conversation' + seedbot_gpt4_conversation);
         console.log('seedbot_gpt4_submitButton: ' + seedbot_gpt4_submitButton);
-        console.log('seedbot_gpt4: ' + seedbot_gpt4);
+        console.log('seedbot_gpt4_chatbot: ' + seedbot_gpt4_chatbot); // Updated variable name
         console.log('seedbot_gpt4_width_setting: ' + seedbot_gpt4_width_setting);
     }
 
     var seedbot_gpt4_OpenButton = $('#seedbot-gpt4-open-btn');
     // Use 'open' for an open chatbot or 'closed' for a closed chatbot - Ver 1.1.0
     var seedbot_gpt4_start_status = 'closed';
-    
+
     // Initially hide the chatbot - Ver 1.1.0
-    seedbot_gpt4.hide();
+    seedbot_gpt4_chatbot.hide(); // Updated variable name
     seedbot_gpt4_OpenButton.show();
 
     var seedbot_gpt4_Container = $('<div></div>').addClass('seedbot-gpt4-container');
@@ -61,13 +61,13 @@ jQuery(document).ready(function ($) {
         var seedbot_gpt4_initialGreeting;
         // Remove any legacy conversations that might be store in local storage for increased privacy - Ver 1.4.2
         localStorage.removeItem('seedbot_gpt4_conversation');
-  
+
         if (seedbot_gpt4_isFirstTime) {
             seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_initial_greeting') || 'Hello! How can I help you today?';
 
             // Logging for Diagnostics - Ver 1.4.2
             if (seedbot_gpt4_diagnostics === 'On') {
-                console.log("initialGreeting" . seedbot_initialGreeting);
+                console.log("initialGreeting" + seedbot_initialGreeting); // Updated variable name
             }
 
             // Don't append the greeting if it's already in the conversation
@@ -81,36 +81,39 @@ jQuery(document).ready(function ($) {
             sessionStorage.setItem('seedbot_gpt4_conversation', seedbot_gpt4_conversation.html());
 
         } else {
-            
+
             seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_gpt4_subsequent_greeting') || 'Hello again! How can I help you?';
 
             // Logging for Diagnostics - Ver 1.4.2
             if (seedbot_gpt4_diagnostics === 'On') {
-                console.log("initialGreeting" . seedbot_gpt4_initialGreeting);
+                console.log("initialGreeting" + seedbot_gpt4_initialGreeting); // Updated variable name
             }
 
             // Don't append the greeting if it's already in the conversation
             if (seedbot_gpt4_conversation.text().includes(seedbot_gpt4_initialGreeting)) {
                 return;
             }
-            
+
             seedbot_gpt4_appendMessage(seedbot_gpt4_initialGreeting, 'bot', 'initial-greeting');
             localStorage.setItem('seedbot_gpt4_ChatBotOpened', 'true');
         }
     }
 
+    // ... Rest of the code remains unchanged
+
+});
 
     // Add chatbot header, body, and other elements - Ver 1.1.0
     var seedbot_gpt4_chatbotHeader = $('<div></div>').addClass('seedbot-header');
-    seedbot_gpt4_ChatBot.append(seedbot_gpt4_chatbotHeader);
+    seedbot_gpt4.append(seedbot_gpt4_chatbotHeader);
 
     // Fix for Ver 1.2.0
-    seedbot_gpt4_chatbotHeader.append(seedbot_gpt4_chatbotCollapseBtn);
-    seedbot_gpt4_chatbotHeader.append(seedbot_gpt4_chatbotCollapsed);
+    seedbot_gpt4_chatbotHeader.append(seedbot_gpt4_CollapseBtn);
+    seedbot_gpt4_chatbotHeader.append(seedbot_gpt4_Collapsed);
 
     // Attach the click event listeners for the collapse button and collapsed chatbot icon
-    seedbot_gpt4_chatbotCollapseBtn.on('click', seedbot_gpt4_toggleChatbot);
-    seedbot_gpt4_chatbotCollapsed.on('click', seedbot_gpt4_toggleChatbot);
+    seedbot_gpt4_CollapseBtn.on('click', seedbot_gpt4_toggleChatbot);
+    seedbot_gpt4_Collapsed.on('click', seedbot_gpt4_toggleChatbot);
     seedbot_gpt4_OpenButton.on('click', seedbot_gpt4_toggleChatbot);
 
     function seedbot_gpt4_appendMessage(message, sender, cssClass) {
