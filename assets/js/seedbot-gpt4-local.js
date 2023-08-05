@@ -2,13 +2,13 @@ jQuery(document).ready(function ($) {
 
     function seedbot_gpt4_localize() {
         // Access the variables passed from PHP using the seedbotSettings object - Ver 1.4.1
-        var seedbotName = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_bot_name) ? seedbotSettings.seedbot_bot_name : 'SeedBot GPT4';
-        var seedbotInitialGreeting = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_initial_greeting) ? seedbotSettings.seedbot_initial_greeting : 'Hello! How can I help you today?';
-        var seedbotSubsequentGreeting = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_subsequent_greeting) ? seedbotSettings.seedbot_subsequent_greeting : 'Hello again! How can I help you?';
-        var seedbotStartStatus = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedGPTBotStatus) ? seedbotSettings.seedGPTBotStatus : 'closed';
-        var seedbotDisclaimerSetting = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_disclaimer_setting) ? seedbotSettings.seedbot_disclaimer_setting : 'Yes';
-        var seedbotMaxTokensSetting = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_max_tokens_setting) ? seedbotSettings.seedbot_max_tokens_setting : '150';
-        var seedbotWidthSetting = (typeof seedbotSettings !== 'undefined' && seedbotSettings.seedbot_width_setting) ? seedbotSettings.seedbot_width_setting : 'Narrow';
+        var seedbotName = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettingsForm.seedbot_bot_name) ? seedbotSettingsForm.seedbot_bot_name : 'SeedBot GPT4';
+        var seedbotInitialGreeting = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettingsForm.seedbot_initial_greeting) ? seedbotSettings.seedbot_initial_greeting : 'Hello! How can I help you today?';
+        var seedbotSubsequentGreeting = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettings.seedbot_subsequent_greeting) ? seedbotSettings.seedbot_subsequent_greeting : 'Hello again! How can I help you?';
+        var seedbotStartStatus = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettings.seedGPTBotStatus) ? seedbotSettings.seedGPTBotStatus : 'closed';
+        var seedbotDisclaimerSetting = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettings.seedbot_disclaimer_setting) ? seedbotSettings.seedbot_disclaimer_setting : 'Yes';
+        var seedbotMaxTokensSetting = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettings.seedbot_max_tokens_setting) ? seedbotSettings.seedbot_max_tokens_setting : '150';
+        var seedbotWidthSetting = (typeof seedbotSettingsForm !== 'undefined' && seedbotSettings.seedbot_width_setting) ? seedbotSettings.seedbot_width_setting : 'Narrow';
 
         // Get the input elements
         var seedbotNameInput = document.getElementById('seedbot_bot_name');
