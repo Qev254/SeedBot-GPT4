@@ -40,7 +40,7 @@
     width: 500px;
 }
 
-#seedbot-header {
+#seedbot-gpt4-header {
     background-color: #222;
     color: #fff;
     padding: 10px;
@@ -157,7 +157,7 @@
 }
 
 /* Show the seedbot open button in the lower right corner of the window */
-#seedbot-open-btn {
+#seedbot-gpt4-open-btn {
     position: fixed;
     bottom: 5%;
     right: 5%;
@@ -168,7 +168,7 @@
     float: right;
 }
 
-#seedgpt-open-btn {
+#seedbot-gpt4-open-btn {
     position: fixed;
     bottom: 2%;
     right: 2%;
@@ -183,11 +183,11 @@
     z-index: 100;
 }
 
-#seedgpt-open-btn:hover {
+#seedbot-gpt4-open-btn:hover {
     background-color: #0257b3;
 }
 
-#seedgptTitle.title {
+#seedbotTitle.title {
     color: white;
     font-size: 30px;
     /* font-weight: 300; */
