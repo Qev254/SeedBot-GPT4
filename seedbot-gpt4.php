@@ -91,6 +91,8 @@ function seedbot_gpt4_send_message()
 {
     // Get the save API key
     $api_key = esc_attr(get_option('seedbot_api_key'));
+    seedebug_to_console($debug_data);
+
 
     // Get the saved model from the settings or default to gpt-3.5-turbo
     $model = esc_attr(get_option('seedbot_model_choice', 'gpt-3.5-turbo'));
