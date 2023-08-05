@@ -11,11 +11,11 @@ jQuery(document).ready(function ($) {
     // Set bot width with the default Narrow or from setting Wide - Ver 1.4.2
     var seedbot_gpt4_width_setting = localStorage.getItem('seedbot_gpt4_width_setting') || 'Narrow';
 
-    var seedbot_gpt4_chatbot = $('#seedbot-gpt4-chatbot'); // Updated variable name
+    var seedbot_gpt4 = $('#seedbot-gpt4'); // Updated variable name
     if (seedbot_gpt4_width_setting === 'Wide') {
-        seedbot_gpt4_chatbot.addClass('wide'); // Updated variable name
+        seedbot_gpt4.addClass('wide'); // Updated variable name
     } else {
-        seedbot_gpt4_chatbot.removeClass('wide'); // Updated variable name
+        seedbot_gpt4.removeClass('wide'); // Updated variable name
     }
 
     // For Diagnostics Logs
@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
         console.log('seedbot_gpt4_messageInput: ' + seedbot_gpt4_messageInput);
         console.log('seedbot_gpt4_conversation' + seedbot_gpt4_conversation);
         console.log('seedbot_gpt4_submitButton: ' + seedbot_gpt4_submitButton);
-        console.log('seedbot_gpt4_chatbot: ' + seedbot_gpt4_chatbot); // Updated variable name
+        console.log('seedbot_gpt4: ' + seedbot_gpt4); // Updated variable name
         console.log('seedbot_gpt4_width_setting: ' + seedbot_gpt4_width_setting);
     }
 
@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
     var seedbot_gpt4_start_status = 'closed';
 
     // Initially hide the chatbot - Ver 1.1.0
-    seedbot_gpt4_chatbot.hide(); // Updated variable name
+    seedbot_gpt4.hide(); // Updated variable name
     seedbot_gpt4_OpenButton.show();
 
     var seedbot_gpt4_Container = $('<div></div>').addClass('seedbot-gpt4-container');
@@ -227,15 +227,15 @@ jQuery(document).ready(function ($) {
 
     // Add the seedbot_gpt4_toggleChatbot() function - Ver 1.1.0
     function seedbot_gpt4_toggleChatbot() {
-        if (seedbot_gpt4_chatbot.is(':visible')) {
-            seedbot_gpt4_chatbot.hide();
+        if (seedbot_gpt4.is(':visible')) {
+            seedbot_gpt4.hide();
             seedbot_gpt4_OpenButton.show();
             localStorage.setItem('seedbot_gpt4_ChatBotStatus', 'closed');
             // Clear the conversation when the chatbot is closed - Ver 1.2.0
             // Keep the conversation when the chatbot is closed - Ver 1.2.4
             // sessionStorage.removeItem('seedbot_gpt4_conversation');
         } else {
-            seedbot_gpt4_chatbot.show();
+            seedbot_gpt4.show();
             seedbot_gpt4_OpenButton.hide();
             localStorage.setItem('seedbot_gpt4_ChatBotStatus', 'open');
             seedbot_gpt4_loadConversation();
@@ -251,23 +251,23 @@ jQuery(document).ready(function ($) {
         // If the chatbot status is not set in local storage, use seedbot_gpt4_start_status
         if (seedbot_gpt4_ChatBotStatus === null) {
             if (seedbot_gpt4_start_status === 'closed') {
-                seedbot_gpt4_chatbot.hide();
+                seedbot_gpt4.hide();
                 seedbot_gpt4_OpenButton.show();
             } else {
-                seedbot_gpt4_chatbot.show();
+                seedbot_gpt4.show();
                 seedbot_gpt4_OpenButton.hide();
                 // Load the conversation when the chatbot is shown on page load
                 seedbot_gpt4_loadConversation();
                 seedbot_gpt4_scrollToBottom();
             }
         } else if (seedbot_gpt4_ChatBotStatus === 'closed') {
-            if (seedbot_gpt4_chatbot.is(':visible')) {
-                seedbot_gpt4_chatbot.hide();
+            if (seedbot_gpt4.is(':visible')) {
+                seedbot_gpt4.hide();
                 seedbot_gpt4_OpenButton.show();
             }
         } else if (seedbot_gpt4_ChatBotStatus === 'open') {
-            if (seedbot_gpt4_chatbot.is(':hidden')) {
-                seedbot_gpt4_chatbot.show();
+            if (seedbot_gpt4.is(':hidden')) {
+                seedbot_gpt4.show();
                 seedbot_gpt4_OpenButton.hide();
                 seedbot_gpt4_loadConversation();
                 seedbot_gpt4_scrollToBottom();
