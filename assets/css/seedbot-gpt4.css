@@ -128,7 +128,7 @@
 }
 
 /* Collapse seedbot upon user request */
-.chatbot-collapse-btn {
+.seedbot-gpt4-collapse-btn {
     position: absolute;
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@
     border-radius: 10%;
 }
 
-.chatbot-collapse-btn:hover {
+.seedbot-gpt4-collapse-btn:hover {
     background-color: #0257b3;    
 }
 
