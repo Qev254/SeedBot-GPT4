@@ -134,7 +134,7 @@ add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'seedbot_gpt4_plu
 function seedbot_gpt4_call_api($api_key, $message)
 {
     // Diagnostics = Ver 1.4.2
-    $seedbot_diagnostics = esc_attr(get_option('seedbot_diagnostics', 'Off'));
+    $seedbot_diagnostics = esc_attr(get_option('seedbot_diagnostics', 'On'));
 
     // The current SeedBot GPT4 API URL endpoint for gpt-3.5-turbo and gpt-4
     $api_url = 'https://api.openai.com/v1/chat/completions';
