@@ -99,8 +99,6 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    // ... Rest of the code remains unchanged
-
 });
 
     // Add chatbot header, body, and other elements - Ver 1.1.0
@@ -229,15 +227,15 @@ jQuery(document).ready(function ($) {
 
     // Add the seedbot_gpt4_toggleChatbot() function - Ver 1.1.0
     function seedbot_gpt4_toggleChatbot() {
-        if (seedbot_gpt4_ChatBot.is(':visible')) {
-            seedbot_gpt4_ChatBot.hide();
+        if (seedbot_gpt4_chatbot.is(':visible')) {
+            seedbot_gpt4_chatbot.hide();
             seedbot_gpt4_OpenButton.show();
             localStorage.setItem('seedbot_gpt4_ChatBotStatus', 'closed');
             // Clear the conversation when the chatbot is closed - Ver 1.2.0
             // Keep the conversation when the chatbot is closed - Ver 1.2.4
             // sessionStorage.removeItem('seedbot_gpt4_conversation');
         } else {
-            seedbot_gpt4_ChatBot.show();
+            seedbot_gpt4_chatbot.show();
             seedbot_gpt4_OpenButton.hide();
             localStorage.setItem('seedbot_gpt4_ChatBotStatus', 'open');
             seedbot_gpt4_loadConversation();
@@ -253,23 +251,23 @@ jQuery(document).ready(function ($) {
         // If the chatbot status is not set in local storage, use seedbot_gpt4_start_status
         if (seedbot_gpt4_ChatBotStatus === null) {
             if (seedbot_gpt4_start_status === 'closed') {
-                seedbot_gpt4_ChatBot.hide();
+                seedbot_gpt4_chatbot.hide();
                 seedbot_gpt4_OpenButton.show();
             } else {
-                seedbot_gpt4_ChatBot.show();
+                seedbot_gpt4_chatbot.show();
                 seedbot_gpt4_OpenButton.hide();
                 // Load the conversation when the chatbot is shown on page load
                 seedbot_gpt4_loadConversation();
                 seedbot_gpt4_scrollToBottom();
             }
         } else if (seedbot_gpt4_ChatBotStatus === 'closed') {
-            if (seedbot_gpt4_ChatBot.is(':visible')) {
-                seedbot_gpt4_ChatBot.hide();
+            if (seedbot_gpt4_chatbot.is(':visible')) {
+                seedbot_gpt4_chatbot.hide();
                 seedbot_gpt4_OpenButton.show();
             }
         } else if (seedbot_gpt4_ChatBotStatus === 'open') {
-            if (seedbot_gpt4_ChatBot.is(':hidden')) {
-                seedbot_gpt4_ChatBot.show();
+            if (seedbot_gpt4_chatbot.is(':hidden')) {
+                seedbot_gpt4_chatbot.show();
                 seedbot_gpt4_OpenButton.hide();
                 seedbot_gpt4_loadConversation();
                 seedbot_gpt4_scrollToBottom();
