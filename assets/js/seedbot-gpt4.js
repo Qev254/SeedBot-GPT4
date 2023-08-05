@@ -63,14 +63,14 @@ jQuery(document).ready(function ($) {
         localStorage.removeItem('seedbot_gpt4_conversation');
 
         if (seedbot_gpt4_isFirstTime) {
-            seedbot_gpt4_initialGreeting = localStorage.getItem('seedbot_initial_greeting') || 'Hello! How can I help you today?';
+            seedbot_gpt4_initialGreeting = localStorage.getItem('greetings_data.initial_greeting') || 'Hello! How can I help you today?';
 
             // Logging for Diagnostics - Ver 1.4.2
             if (seedbot_gpt4_diagnostics === 'On') {
-                console.log("initialGreeting" + seedbot_initialGreeting); // Updated variable name
+                console.log("seedbot_gpt4_initialGreeting" + seedbot_gpt4_initialGreeting); // Updated variable name
             }
-
-            // Don't append the greeting if it's already in the conversation
+ 
+            // Don't append thegreeting if it's already in the conversation
             if (seedbot_gpt4_conversation.text().includes(seedbot_gpt4_initialGreeting)) {
                 return;
             }
