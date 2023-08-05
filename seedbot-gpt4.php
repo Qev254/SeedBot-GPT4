@@ -83,7 +83,7 @@ function seedebug_to_console($data) {
 
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
-$debug_data = "TESTING DEBUGGER";
+$debug_data = "TESTING DEBUGGER TO SEE IF AJAX HANDLES FINE";
 seedebug_to_console($debug_data);
 
 // Handle Ajax requests
