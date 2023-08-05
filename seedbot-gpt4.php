@@ -162,6 +162,7 @@ function seedbot_gpt4_call_api($api_key, $message)
     );
 
     $response = wp_remote_post($api_url, $args);
+    seedebug_to_console($response);
 
     // Handle any errors that are returned from the chat engine
     if (is_wp_error($response)) {
