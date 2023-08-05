@@ -175,6 +175,7 @@ jQuery(document).ready(function ($) {
             
         seedbot_gpt4_messageInput.val('');
         seedbot_gpt4_appendMessage(message, 'user');
+        console.log(message);
 
         $.ajax({
             url: seedbot_gpt4_params.ajax_url,

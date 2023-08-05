@@ -34,7 +34,7 @@ require_once plugin_dir_path(__FILE__) . 'includes/seedbot-gpt4-settings.php';
 require_once plugin_dir_path(__FILE__) . 'includes/seedbot-gpt4-shortcode.php';
 
 // Diagnostics On or Off - Ver 1.4.2
-update_option('seedbot_diagnostics', 'Off');
+update_option('seedbot_diagnostics', 'On');
 
 // Enqueue plugin scripts and styles
 function seedbot_gpt4_enqueue_scripts()
