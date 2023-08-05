@@ -1,3 +1,4 @@
+<script>
 jQuery(document).ready(function ($) {
 
     // Logging for Diagnostics - Ver 1.4.2
@@ -310,3 +311,4 @@ jQuery(document).ready(function ($) {
 
 });
 //update
+</script>
