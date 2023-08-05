@@ -42,7 +42,7 @@ function seedbot_gpt4_enqueue_scripts()
     // Ensure the Dashicons font is properly enqueued - Ver 1.0
     wp_enqueue_style('dashicons');
     wp_enqueue_style('seedbot-gpt4-css', plugins_url('assets/css/seedbot-gpt4.css', __FILE__));
-    wp_enqueue_script('seedbot-gpt4-js', plugins_url('assets/js/seedbot-gpt4.js', __FILE__));
+    wp_enqueue_script('seedbot-gpt4-js', plugins_url('assets/js/seedbot-gpt4.js', __FILE__), array('jquery'), '3.4.0', true);
 
     // Enqueue the seedbot-gpt4-local.js file as seedbot-gpt4-local
     wp_enqueue_script('seedbot-gpt4-local', plugins_url('assets/js/seedbot-gpt4-local.js', __FILE__), array('jquery'), '1.0', true);
