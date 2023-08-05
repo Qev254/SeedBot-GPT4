@@ -99,8 +99,6 @@ jQuery(document).ready(function ($) {
         }
     }
 
-});
-
     // Add chatbot header, body, and other elements - Ver 1.1.0
     var seedbot_gpt4_chatbotHeader = $('<div></div>').addClass('seedbot-header');
     seedbot_gpt4.append(seedbot_gpt4_chatbotHeader);
@@ -307,5 +305,3 @@ jQuery(document).ready(function ($) {
     // seedbot_gpt4_loadConversation();
 
 });
-//update
-// </script>
