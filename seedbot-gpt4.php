@@ -107,6 +107,7 @@ function seedbot_gpt4_send_message()
 
     // Check API key and message
     if (!$api_key || !$message) {
+        seedebug_to_console('api issues');
         wp_send_json_error('Invalid API key or message');
     }
 
