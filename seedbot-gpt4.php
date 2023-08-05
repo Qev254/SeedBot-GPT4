@@ -97,6 +97,8 @@ function seedbot_gpt4_send_message()
     // Get the saved model from the settings or default to gpt-3.5-turbo
     $model = esc_attr(get_option('seedbot_model_choice', 'gpt-3.5-turbo'));
     seedebug_to_console($model);
+    seedebug_to_console('model');
+
 
     // Max tokens - 
     $max_tokens = esc_attr(get_option('seedbot_max_tokens_setting', 150));
