@@ -39,4 +39,18 @@ The SeedBot GPT4 WordPress plugin enables you to effortlessly integrate a GPT-4 
 
 Utilize the following shortcode to integrate the chatbot into your WordPress pages or posts:
 
+## Support
+
+For assistance or to report any issues, kindly [create an issue on GitHub](https://github.com/qev254/seedbot-gpt4/issues).
+
+## License
+
+This plugin is released under the GNU General Public License v2.0 or later. Refer to the [LICENSE](LICENSE) file for more information.
+
+## Credits
+
+- Plugin developed by [joxdigital.com](https://www.joxdigital.com).
+- Powered by the GPT-4 language model provided by OpenAI.
+
+
 
