@@ -175,7 +175,6 @@ jQuery(document).ready(function ($) {
             
         seedbot_gpt4_messageInput.val('');
         seedbot_gpt4_appendMessage(message, 'user');
-        seedbot_gpt4_appendMessage('testing on user msg', 'user');
 
         console.log(message);
 
