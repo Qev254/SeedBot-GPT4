@@ -236,11 +236,11 @@ jQuery(document).ready(function ($) {
                 console.log("Testing API connection...");
             },
             success: function (response) {
-                if (response.success) {
+                if (response && response.success) {
                     console.log("API Connection Test Successful:");
                     console.log("Bot Response:", response.data);
                 } else {
-                    console.log("API Connection Test Failed. Error:", response.data);
+                    console.log("API Connection Test Failed. Error:", response ? response.data : "Unknown error");
                 }
             },
             error: function () {
@@ -248,6 +248,7 @@ jQuery(document).ready(function ($) {
             },
         });
     }
+    
     
 
     seedbot_gpt4_messageInput.on('keydown', function (e) {
