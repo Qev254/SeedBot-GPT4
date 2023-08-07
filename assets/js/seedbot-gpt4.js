@@ -218,6 +218,35 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    function seedbot_gpt4_testAPIConnection() {
+        // Define a sample message to send to the API
+        var testMessage = "Hello, this is a test message to check the API connection.";
+    
+        $.ajax({
+            url: seedbot_gpt4_params.ajax_url,
+            method: 'POST',
+            data: {
+                action: 'seedbot_gpt4_send_message',
+                message: testMessage,
+            },
+            beforeSend: function () {
+                console.log("Testing API connection...");
+            },
+            success: function (response) {
+                if (response.success) {
+                    console.log("API Connection Test Successful:");
+                    console.log("Bot Response:", response.data);
+                } else {
+                    console.log("API Connection Test Failed. Error:", response.data);
+                }
+            },
+            error: function () {
+                console.log("API Connection Test Failed. Unable to send message.");
+            },
+        });
+    }
+    
+
     seedbot_gpt4_messageInput.on('keydown', function (e) {
         if (e.keyCode === 13) {
             e.preventDefault();
