@@ -24,6 +24,7 @@ button.test-api-button {
     position: fixed;
     bottom: 30px;
     left: 30px;
+    margin: 11px;
 }
 
 #seedbot-gpt4 {
