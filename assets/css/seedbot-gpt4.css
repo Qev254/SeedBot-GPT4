@@ -19,6 +19,13 @@
     font-family: sans-serif;
 }
 
+button.test-api-button {
+    background-color: #ec2d2d;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+}
+
 #seedbot-gpt4 {
     position: fixed;
     bottom: 10px;
