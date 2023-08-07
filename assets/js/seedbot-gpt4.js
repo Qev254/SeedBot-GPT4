@@ -340,6 +340,7 @@ jQuery(document).ready(function ($) {
         testButton.on('click', seedbot_gpt4_testAPIConnection);
     
         // Append the button to a container (replace 'container-selector' with your actual container selector  .seedbotcontainer)
-        $('.seedbot-gpt4-container').append(testButton);
+        var test_btn_container = $('<div></div>').addClass('test-btn-container');
+        $('.test-btn-container').append(testButton);
 
 });
