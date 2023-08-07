@@ -168,16 +168,17 @@ jQuery(document).ready(function ($) {
     seedbot_gpt4_submitButton.on('click', function () {
         var message = seedbot_gpt4_messageInput.val().trim();
         var seedbot_gpt4_disclaimer_setting = localStorage.getItem('seedbot_gpt4_disclaimer_setting') || 'Yes';
-
+    
         if (!message) {
             return;
         }
-            
+    
+        // Log the user's message
+        console.log("User Message:", message);
+    
         seedbot_gpt4_messageInput.val('');
         seedbot_gpt4_appendMessage(message, 'user');
-
-        console.log(message);
-
+    
         $.ajax({
             url: seedbot_gpt4_params.ajax_url,
             method: 'POST',
@@ -195,13 +196,13 @@ jQuery(document).ready(function ($) {
                     let botResponse = response.data;
                     const prefix_a = "As an AI language model, ";
                     const prefix_b = "I am an AI language model and ";
-
+    
                     if (botResponse.startsWith(prefix_a) && seedbot_gpt4_disclaimer_setting === 'No') {
                         botResponse = botResponse.slice(prefix_a.length);
                     } else if (botResponse.startsWith(prefix_b) && seedbot_gpt4_disclaimer_setting === 'No') {
                         botResponse = botResponse.slice(prefix_b.length);
                     }
-                                    
+    
                     seedbot_gpt4_appendMessage(botResponse, 'bot');
                 } else {
                     seedbot_gpt4_appendMessage('Error: ' + response.data, 'error');
@@ -214,9 +215,13 @@ jQuery(document).ready(function ($) {
             complete: function () {
                 seedbot_gpt4_removeTypingIndicator();
                 seedbot_gpt4_submitButton.prop('disabled', false);
+    
+                // Call the API connection test function after submitting the user's message
+                seedbot_gpt4_testAPIConnection();
             },
         });
     });
+    
 
     function seedbot_gpt4_testAPIConnection() {
         // Define a sample message to send to the API
