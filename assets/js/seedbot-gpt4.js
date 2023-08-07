@@ -331,12 +331,15 @@ jQuery(document).ready(function ($) {
     // Call the seedbot_gpt4_loadChatbotStatus function here - Ver 1.1.0
     seedbot_gpt4_loadChatbotStatus(); 
 
-    var testButton = $('<button>Test API Connection</button>').addClass('test-api-button');
-    testButton.on('click', seedbot_gpt4_testAPIConnection);
-
-
     // Load the conversation when the chatbot is shown on page load - Ver 1.2.0
     // Let the convesation stay persistent in session storage for increased privacy - Ver 1.4.2
     // seedbot_gpt4_loadConversation();
+
+        // Add a button to test API connection
+        var testButton = $('<button>Test API Connection</button>').addClass('test-api-button');
+        testButton.on('click', seedbot_gpt4_testAPIConnection);
+    
+        // Append the button to a container (replace 'container-selector' with your actual container selector)
+        $('.container-selector').append(testButton);
 
 });
